@@ -29,12 +29,18 @@ nav{
   backdrop-filter: blur(10px);
   display:flex;
   justify-content:space-between;
-  padding:15px 30px;
+  align-items:center;
+  padding:15px 20px;
   z-index:1000;
 }
 
 nav h2{
   color:#ff7a00;
+}
+
+/* NAV LINKS */
+.nav-links{
+  display:flex;
 }
 
 nav a{
@@ -48,7 +54,39 @@ nav a:hover{
   color:#ff7a00;
 }
 
-/* ===== HERO (WITH YOUR IMAGE) ===== */
+/* MOBILE MENU */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+  .nav-links{
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    background:black;
+    flex-direction:column;
+    display:none;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .nav-links a{
+    margin:15px 0;
+    text-align:center;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+}
+
+/* ===== HERO ===== */
 .hero{
   height:100vh;
   display:flex;
@@ -66,7 +104,6 @@ nav a:hover{
   background-position:center;
 }
 
-/* optional dark overlay */
 .hero::before{
   content:"";
   position:absolute;
@@ -77,14 +114,13 @@ nav a:hover{
   background: radial-gradient(circle, transparent, rgba(0,0,0,0.8));
 }
 
-/* keep content above overlay */
 .hero *{
   position:relative;
   z-index:2;
 }
 
 .hero h1{
-  font-size:40px;
+  font-size:42px;
 }
 
 .hero span{
@@ -97,8 +133,8 @@ nav a:hover{
 }
 
 .tagline{
-  margin-top:30px;
-  font-size:24px;
+  margin-top:25px;
+  font-size:22px;
 }
 
 .tagline span{
@@ -108,14 +144,14 @@ nav a:hover{
 
 /* ===== WAVE ===== */
 .wave{
-  height:100px;
+  height:80px;
   background: linear-gradient(to right, #ff7a00, #ffb347);
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 
 /* ===== SECTION ===== */
 section{
-  padding:80px 20px;
+  padding:70px 20px;
   text-align:center;
 }
 
@@ -152,11 +188,12 @@ section{
   font-weight:bold;
 }
 
-/* ===== BENEFITS TABLE ===== */
+/* ===== TABLE ===== */
 .table-container{
   max-width:900px;
   margin:auto;
   margin-top:40px;
+  overflow-x:auto;
 }
 
 table{
@@ -164,6 +201,7 @@ table{
   border-collapse: collapse;
   border-radius:15px;
   overflow:hidden;
+  min-width:400px;
 }
 
 th{
@@ -214,22 +252,29 @@ td{
   100%{transform:translateY(0);}
 }
 
-/* MOBILE */
+/* MOBILE TEXT */
 @media(max-width:600px){
   .hero h1{
-    font-size:28px;
+    font-size:26px;
+  }
+
+  .tagline{
+    font-size:18px;
   }
 }
 </style>
-
 </head>
+
 <body>
 
 <!-- NAV -->
 <nav>
   <h2>RMR IgniteTech</h2>
-  <div>
-    <a href="ndex.html">Home</a>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
     <a href="Plans.html">Plans</a>
     <a href="Services.html">Services</a>
     <a href="About.html">About</a>
@@ -303,6 +348,12 @@ td{
 <div class="footer">
   PRK. RAMBUTAN, PACO, KIDAPAWAN CITY, NORTH COTABATO
 </div>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
