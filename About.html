@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About | RMR IgniteTech</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      color:white;
+
+      /* IMAGE 2 BACKGROUND */
+      background: url("image2.jpg") no-repeat center center/cover;
+      position: relative;
+    }
+
+    /* DARK OVERLAY */
+    body::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background: rgba(0,0,0,0.65);
+      z-index:0;
+    }
+
+    nav{
+      position:relative;
+      z-index:1;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 60px;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid #ff7a00;
+    }
+
+    nav h2{
+      color:#ff7a00;
+      letter-spacing:1px;
+      font-weight:bold;
+    }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:25px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-weight:500;
+      transition:0.3s;
+      position:relative;
+    }
+
+    nav ul li a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-5px;
+      width:0%;
+      height:2px;
+      background:#ff7a00;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#ff7a00;
+    }
+
+    nav ul li a:hover::after{
+      width:100%;
+    }
+
+    /* MAIN SECTION */
+    section{
+      position:relative;
+      z-index:1;
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:40px 20px;
+    }
+
+    section h1{
+      font-size:52px;
+      margin-bottom:25px;
+      color:#ff7a00;
+      text-shadow:0 0 10px rgba(0,0,0,0.6);
+    }
+
+    .about-box{
+      max-width:750px;
+      padding:30px;
+      background: rgba(255,255,255,0.1);
+      border:1px solid rgba(255,122,0,0.4);
+      border-radius:15px;
+      backdrop-filter: blur(15px);
+      box-shadow:0 10px 35px rgba(0,0,0,0.5);
+    }
+
+    .about-box p{
+      font-size:18px;
+      line-height:1.8;
+      color:white;
+    }
+
+    /* FOOTER FIXED BOTTOM */
+    footer{
+      position:relative;
+      z-index:1;
+      text-align:center;
+      padding:15px;
+      background: rgba(0,0,0,0.6);
+      border-top: 2px solid #ff7a00;
+      color:white;
+      font-size:14px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<nav>
+  <h2>RMR IgniteTech</h2>
+  <ul>
+    <li><a href="Home.html">Home</a></li>
+    <li><a href="Plans.html">Plans</a></li>
+    <li><a href="Services.html">Services</a></li>
+    <li><a href="About.html">About</a></li>
+  </ul>
+</nav>
+
+<section>
+  <h1>About Us</h1>
+
+  <div class="about-box">
+    <p>
+      RMR IgniteTech 'N Connection provides fast, secure and affordable 
+      home fiber internet services. We are committed to delivering 
+      reliable connectivity with FREE insurance benefits and 
+      24/7 customer support.
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2026 RMR IgniteTech 'N Connection | All Rights Reserved
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RMR IgniteTech Premium</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#0f2027;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  display:flex;
+  justify-content:space-between;
+  padding:15px 30px;
+  z-index:1000;
+}
+
+nav h2{
+  color:#ff7a00;
+}
+
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#ff7a00;
+}
+
+/* ===== HERO (WITH YOUR IMAGE) ===== */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+    url('image 1.jpg');
+
+  background-size:cover;
+  background-position:center;
+}
+
+/* optional dark overlay */
+.hero::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background: radial-gradient(circle, transparent, rgba(0,0,0,0.8));
+}
+
+/* keep content above overlay */
+.hero *{
+  position:relative;
+  z-index:2;
+}
+
+.hero h1{
+  font-size:40px;
+}
+
+.hero span{
+  color:#ff7a00;
+}
+
+.hero p{
+  margin-top:10px;
+  opacity:0.9;
+}
+
+.tagline{
+  margin-top:30px;
+  font-size:24px;
+}
+
+.tagline span{
+  color:red;
+  font-weight:bold;
+}
+
+/* ===== WAVE ===== */
+.wave{
+  height:100px;
+  background: linear-gradient(to right, #ff7a00, #ffb347);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+/* ===== SECTION ===== */
+section{
+  padding:80px 20px;
+  text-align:center;
+}
+
+/* ===== PLANS ===== */
+.plans{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:40px;
+}
+
+.card{
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius:20px;
+  padding:25px;
+  transition:0.4s;
+  box-shadow:0 0 15px rgba(255,122,0,0.2);
+  animation: float 4s ease-in-out infinite;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 0 25px #ff7a00;
+}
+
+.card h2{
+  color:#ff7a00;
+}
+
+.card p{
+  margin-top:10px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* ===== BENEFITS TABLE ===== */
+.table-container{
+  max-width:900px;
+  margin:auto;
+  margin-top:40px;
+}
+
+table{
+  width:100%;
+  border-collapse: collapse;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+th{
+  background:#ff7a00;
+  padding:15px;
+}
+
+td{
+  background:#f4c430;
+  color:black;
+  padding:15px;
+  border:1px solid #333;
+  font-weight:bold;
+}
+
+/* ===== CTA ===== */
+.cta{
+  margin-top:30px;
+  color:#ff4d4d;
+  font-weight:bold;
+  font-size:18px;
+}
+
+/* ===== CONTACT ===== */
+.contact{
+  background: linear-gradient(to right,#ff7a00,#ffb347);
+  color:black;
+  text-align:center;
+  padding:40px 20px;
+}
+
+.contact p{
+  margin:8px;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  background:black;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .hero h1{
+    font-size:28px;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <h2>RMR IgniteTech</h2>
+  <div>
+    <a href="Home.html">Home</a>
+    <a href="Plans.html">Plans</a>
+    <a href="Services.html">Services</a>
+    <a href="About.html">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>RMR IGNITE<span>TECH</span> 'N CONNECTION</h1>
+  <p>"IGNITING DIGITAL EXCELLENCE"</p>
+
+  <div class="tagline">
+    May Internet kana, may <span>FREE</span> Insurance kapa!
+  </div>
+</div>
+
+<div class="wave"></div>
+
+<!-- PLANS -->
+<section id="plans">
+  <h2>Internet Plans</h2>
+
+  <div class="plans">
+    <div class="card"><h2>50 MBPS</h2><p>₱999 / Month</p></div>
+    <div class="card"><h2>80 MBPS</h2><p>₱1,299 / Month</p></div>
+    <div class="card"><h2>100 MBPS</h2><p>₱1,499 / Month</p></div>
+    <div class="card"><h2>200 MBPS</h2><p>₱1,899 / Month</p></div>
+    <div class="card"><h2>300 MBPS</h2><p>₱2,899 / Month</p></div>
+  </div>
+
+  <p style="margin-top:20px; font-weight:bold;">
+    EXPERIENCE FAST HOME FIBER INTERNET WITH 24/7 SUPPORT
+  </p>
+</section>
+
+<div class="wave"></div>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <h2>LOYALTY BENEFITS</h2>
+
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>BENEFITS</th>
+        <th>PHP</th>
+      </tr>
+
+      <tr><td>Accident Death Insurance</td><td>50,000.00</td></tr>
+      <tr><td>Murder of Unprovoked Assault</td><td>25,000.00</td></tr>
+      <tr><td>Cash Burial Assistant</td><td>7,500.00</td></tr>
+      <tr><td>Life Insurance (Natural Causes)</td><td>12,500.00</td></tr>
+    </table>
+  </div>
+
+  <div class="cta">
+    STAY CONNECTED. STAY PROTECTED.<br>
+    UNLOCK YOUR LOYALTY TODAY!
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div id="contact" class="contact">
+  <p>📞 +63 926 064 0789 (Globe)</p>
+  <p>📞 +63 951 774 7616 (TNT)</p>
+  <p>📧 rmrignitetechnconnection@gmail.com</p>
+  <p>💬 RMR IgniteTech-Connection</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  PRK. RAMBUTAN, PACO, KIDAPAWAN CITY, NORTH COTABATO
+</div>
+
+</body>
+</html>
